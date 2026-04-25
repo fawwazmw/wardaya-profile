@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   title: "Wardaya — Building Digital Solutions That Matter",
   description:
     "Wardaya is a technology-driven company focused on building digital solutions that are scalable, efficient, and impactful. Web applications, systems, and digital products tailored to solve real-world problems.",
+  icons: {
+    icon: "/wardaya-logo.png",
+    apple: "/wardaya-logo.png",
+  },
   keywords: [
     "Wardaya",
     "web development",
