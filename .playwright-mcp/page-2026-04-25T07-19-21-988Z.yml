@@ -1,0 +1,533 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "W Wardaya" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e6]: W
+        - generic [ref=e7]: Wardaya
+      - generic [ref=e8]:
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: "#about"
+          - text: About
+        - link "Services" [ref=e10] [cursor=pointer]:
+          - /url: "#services"
+          - text: Services
+        - link "Work" [ref=e11] [cursor=pointer]:
+          - /url: "#work"
+          - text: Work
+        - link "Team" [ref=e12] [cursor=pointer]:
+          - /url: "#team"
+          - text: Team
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: "#blog"
+          - text: Blog
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: "#contact"
+          - text: Contact
+      - link "Start a Project" [ref=e16] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e22]:
+        - generic [ref=e24]: Available for new projects
+        - generic [ref=e26]:
+          - heading "We craft digital solutions that actually work" [level=1] [ref=e27]:
+            - text: We craft digital
+            - text: solutions that
+            - generic [ref=e28]:
+              - text: actually work
+              - img [ref=e29]
+          - paragraph [ref=e31]: Wardaya is a technology-driven company focused on building digital solutions that are scalable, efficient, and impactful.
+          - generic [ref=e32]:
+            - link "Start a Project" [ref=e33] [cursor=pointer]:
+              - /url: "#contact"
+              - text: Start a Project
+              - img [ref=e34]
+            - link "View Our Work" [ref=e37] [cursor=pointer]:
+              - /url: "#work"
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]: 50+
+            - generic [ref=e41]: Projects Delivered
+          - generic [ref=e42]:
+            - generic [ref=e43]: 30+
+            - generic [ref=e44]: Happy Clients
+          - generic [ref=e45]:
+            - generic [ref=e46]: 4+
+            - generic [ref=e47]: Years Experience
+          - generic [ref=e48]:
+            - generic [ref=e49]: 99.9%
+            - generic [ref=e50]: Uptime SLA
+      - generic [ref=e52]:
+        - generic [ref=e53]: Scroll
+        - img [ref=e54]
+    - generic [ref=e57]:
+      - generic [ref=e58]: Next.js
+      - generic [ref=e60]: React
+      - generic [ref=e62]: TypeScript
+      - generic [ref=e64]: Node.js
+      - generic [ref=e66]: PostgreSQL
+      - generic [ref=e68]: Docker
+      - generic [ref=e70]: AWS
+      - generic [ref=e72]: Figma
+      - generic [ref=e74]: Tailwind CSS
+      - generic [ref=e76]: GraphQL
+      - generic [ref=e78]: Redis
+      - generic [ref=e80]: WebSocket
+      - generic [ref=e82]: Next.js
+      - generic [ref=e84]: React
+      - generic [ref=e86]: TypeScript
+      - generic [ref=e88]: Node.js
+      - generic [ref=e90]: PostgreSQL
+      - generic [ref=e92]: Docker
+      - generic [ref=e94]: AWS
+      - generic [ref=e96]: Figma
+      - generic [ref=e98]: Tailwind CSS
+      - generic [ref=e100]: GraphQL
+      - generic [ref=e102]: Redis
+      - generic [ref=e104]: WebSocket
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - generic [ref=e111]: About Us
+        - heading "Technology-driven, purpose-built" [level=2] [ref=e112]
+        - paragraph [ref=e113]: From concept to deployment, Wardaya combines technical expertise with a strong understanding of user needs to deliver solutions that work — not just technically, but practically.
+      - generic [ref=e114]:
+        - generic [ref=e119]:
+          - generic [ref=e121]: W
+          - paragraph [ref=e122]: Est. 2022
+        - generic [ref=e124]:
+          - paragraph [ref=e125]: "Wardaya was born from a simple belief: technology should serve people, not the other way around. We started as a small team of developers passionate about building things that matter."
+          - paragraph [ref=e126]: Today, we specialize in developing web applications, systems, and digital products tailored to solve real-world problems. Every line of code we write is driven by purpose and precision.
+          - generic [ref=e129]: Since 2022
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - img [ref=e134]
+          - heading "Mission" [level=3] [ref=e138]
+          - paragraph [ref=e139]: To help individuals, startups, and organizations transform ideas into reliable digital systems that solve real-world problems.
+        - generic [ref=e140]:
+          - img [ref=e142]
+          - heading "Vision" [level=3] [ref=e145]
+          - paragraph [ref=e146]: To become the most trusted technology partner in Southeast Asia, known for delivering solutions that are scalable, efficient, and impactful.
+        - generic [ref=e147]:
+          - img [ref=e149]
+          - heading "Values" [level=3] [ref=e151]
+          - paragraph [ref=e152]: Quality over quantity. Performance by default. Long-term value over quick fixes. We build things right, not just fast.
+    - generic [ref=e156]:
+      - generic [ref=e157]:
+        - generic [ref=e158]: Services
+        - heading "What we do best" [level=2] [ref=e159]
+        - paragraph [ref=e160]: We focus on what we're great at — building digital products and systems that are reliable, performant, and built to last.
+      - generic [ref=e161]:
+        - generic [ref=e164]:
+          - generic [ref=e165]:
+            - img [ref=e167]
+            - generic [ref=e170]: "01"
+          - heading "Web Applications" [level=3] [ref=e171]
+          - paragraph [ref=e172]: Full-stack web applications built with modern frameworks. From concept to deployment, we deliver performant, scalable solutions.
+          - generic [ref=e173]:
+            - generic [ref=e174]: Next.js
+            - generic [ref=e175]: React
+            - generic [ref=e176]: Node.js
+            - generic [ref=e177]: PostgreSQL
+          - generic [ref=e178]:
+            - text: Learn more
+            - img [ref=e179]
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - img [ref=e187]
+            - generic [ref=e191]: "02"
+          - heading "System Architecture" [level=3] [ref=e192]
+          - paragraph [ref=e193]: Designing robust system architectures that scale. We plan infrastructure that grows with your business needs.
+          - generic [ref=e194]:
+            - generic [ref=e195]: Microservices
+            - generic [ref=e196]: Cloud
+            - generic [ref=e197]: DevOps
+            - generic [ref=e198]: CI/CD
+          - generic [ref=e199]:
+            - text: Learn more
+            - img [ref=e200]
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - img [ref=e208]
+            - generic [ref=e210]: "03"
+          - heading "Digital Products" [level=3] [ref=e211]
+          - paragraph [ref=e212]: End-to-end digital product development. We transform ideas into reliable, user-centered digital experiences.
+          - generic [ref=e213]:
+            - generic [ref=e214]: UI/UX
+            - generic [ref=e215]: Mobile
+            - generic [ref=e216]: PWA
+            - generic [ref=e217]: API Design
+          - generic [ref=e218]:
+            - text: Learn more
+            - img [ref=e219]
+        - generic [ref=e224]:
+          - generic [ref=e225]:
+            - img [ref=e227]
+            - generic [ref=e229]: "04"
+          - heading "Technical Consulting" [level=3] [ref=e230]
+          - paragraph [ref=e231]: Expert guidance on technology decisions. We help you choose the right stack and approach for your specific challenges.
+          - generic [ref=e232]:
+            - generic [ref=e233]: Strategy
+            - generic [ref=e234]: Audit
+            - generic [ref=e235]: Migration
+            - generic [ref=e236]: Optimization
+          - generic [ref=e237]:
+            - text: Learn more
+            - img [ref=e238]
+    - generic [ref=e242]:
+      - generic [ref=e243]:
+        - generic [ref=e244]: Our Work
+        - heading "Projects that speak for themselves" [level=2] [ref=e245]
+        - paragraph [ref=e246]: A selection of projects we've built — each one solving a real problem with thoughtful engineering.
+      - generic [ref=e247]:
+        - generic [ref=e250]:
+          - generic [ref=e254]:
+            - generic [ref=e256]: O
+            - text: "2025"
+          - generic [ref=e258]:
+            - generic [ref=e259]:
+              - generic [ref=e260]:
+                - generic [ref=e261]: Platform
+                - generic [ref=e262]: "2025"
+              - heading "OriensSpace" [level=3] [ref=e263]
+              - paragraph [ref=e264]: A comprehensive spatial data platform enabling real-time geospatial analysis and visualization for enterprise clients.
+              - generic [ref=e265]:
+                - generic [ref=e266]: React
+                - generic [ref=e267]: Node.js
+                - generic [ref=e268]: PostgreSQL
+                - generic [ref=e269]: MapBox
+            - generic [ref=e270]:
+              - text: View Case Study
+              - img [ref=e271]
+        - generic [ref=e276]:
+          - generic [ref=e280]:
+            - generic [ref=e282]: B
+            - text: "2024"
+          - generic [ref=e284]:
+            - generic [ref=e285]:
+              - generic [ref=e286]:
+                - generic [ref=e287]: IoT System
+                - generic [ref=e288]: "2024"
+              - heading "BusTracker" [level=3] [ref=e289]
+              - paragraph [ref=e290]: Real-time bus tracking system with live GPS monitoring, route optimization, and passenger information displays.
+              - generic [ref=e291]:
+                - generic [ref=e292]: Next.js
+                - generic [ref=e293]: WebSocket
+                - generic [ref=e294]: IoT
+                - generic [ref=e295]: Redis
+            - generic [ref=e296]:
+              - text: View Case Study
+              - img [ref=e297]
+        - generic [ref=e302]:
+          - generic [ref=e306]:
+            - generic [ref=e308]: M
+            - text: "2024"
+          - generic [ref=e310]:
+            - generic [ref=e311]:
+              - generic [ref=e312]:
+                - generic [ref=e313]: Healthcare
+                - generic [ref=e314]: "2024"
+              - heading "MedMap" [level=3] [ref=e315]
+              - paragraph [ref=e316]: Healthcare facility mapping and resource management platform connecting patients with nearby medical services.
+              - generic [ref=e317]:
+                - generic [ref=e318]: React
+                - generic [ref=e319]: Python
+                - generic [ref=e320]: GIS
+                - generic [ref=e321]: REST API
+            - generic [ref=e322]:
+              - text: View Case Study
+              - img [ref=e323]
+        - generic [ref=e328]:
+          - generic [ref=e332]:
+            - generic [ref=e334]: D
+            - text: "2023"
+          - generic [ref=e336]:
+            - generic [ref=e337]:
+              - generic [ref=e338]:
+                - generic [ref=e339]: Enterprise
+                - generic [ref=e340]: "2023"
+              - heading "Document Server" [level=3] [ref=e341]
+              - paragraph [ref=e342]: Enterprise document management and collaboration platform with real-time editing and version control.
+              - generic [ref=e343]:
+                - generic [ref=e344]: TypeScript
+                - generic [ref=e345]: WebSocket
+                - generic [ref=e346]: S3
+                - generic [ref=e347]: Docker
+            - generic [ref=e348]:
+              - text: View Case Study
+              - img [ref=e349]
+      - link "View All Projects" [ref=e353] [cursor=pointer]:
+        - /url: "#"
+        - text: View All Projects
+        - img [ref=e354]
+    - generic [ref=e361]:
+      - generic [ref=e362]:
+        - generic [ref=e363]: Our Team
+        - heading "The people behind the code" [level=2] [ref=e364]
+        - paragraph [ref=e365]: A small, focused team of engineers and designers who care deeply about the craft of building software.
+      - generic [ref=e366]:
+        - generic [ref=e367]:
+          - generic [ref=e373]: FM
+          - heading "Fawwaz MW" [level=3] [ref=e375]
+          - paragraph [ref=e376]: Founder & Lead Engineer
+          - paragraph [ref=e377]: Full-stack developer with a passion for building scalable digital solutions.
+          - generic [ref=e378]:
+            - link [ref=e379] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e380]
+            - link [ref=e384] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e385]
+            - link [ref=e388] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e389]
+        - generic [ref=e392]:
+          - generic [ref=e398]: AR
+          - heading "Alif Rahman" [level=3] [ref=e400]
+          - paragraph [ref=e401]: Frontend Developer
+          - paragraph [ref=e402]: Crafting pixel-perfect interfaces with modern web technologies.
+          - generic [ref=e403]:
+            - link [ref=e404] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e405]
+            - link [ref=e409] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e410]
+            - link [ref=e413] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e414]
+        - generic [ref=e417]:
+          - generic [ref=e423]: DP
+          - heading "Dian Pratama" [level=3] [ref=e425]
+          - paragraph [ref=e426]: Backend Engineer
+          - paragraph [ref=e427]: Architecting robust server-side systems and database solutions.
+          - generic [ref=e428]:
+            - link [ref=e429] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e430]
+            - link [ref=e434] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e435]
+            - link [ref=e438] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e439]
+        - generic [ref=e442]:
+          - generic [ref=e448]: SD
+          - heading "Sari Dewi" [level=3] [ref=e450]
+          - paragraph [ref=e451]: UI/UX Designer
+          - paragraph [ref=e452]: Designing intuitive user experiences that bridge technology and people.
+          - generic [ref=e453]:
+            - link [ref=e454] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e455]
+            - link [ref=e459] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e460]
+            - link [ref=e463] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e464]
+    - generic [ref=e468]:
+      - generic [ref=e469]:
+        - generic [ref=e470]: Testimonials
+        - heading "Trusted by those who build" [level=2] [ref=e471]
+      - generic [ref=e472]:
+        - generic [ref=e473]:
+          - img [ref=e475]
+          - paragraph [ref=e478]: “Wardaya transformed our vision into a working product faster than we expected. Their technical expertise and attention to detail is remarkable.”
+          - generic [ref=e479]:
+            - generic [ref=e481]: AR
+            - generic [ref=e482]:
+              - paragraph [ref=e483]: Ahmad Rizki
+              - paragraph [ref=e484]: CEO, TechStartup ID
+        - generic [ref=e485]:
+          - img [ref=e487]
+          - paragraph [ref=e490]: “The team at Wardaya doesn't just write code — they understand the business problem and deliver solutions that actually work in the real world.”
+          - generic [ref=e491]:
+            - generic [ref=e493]: MP
+            - generic [ref=e494]:
+              - paragraph [ref=e495]: Maya Putri
+              - paragraph [ref=e496]: Product Manager, DataCorp
+        - generic [ref=e497]:
+          - img [ref=e499]
+          - paragraph [ref=e502]: “Working with Wardaya was a game-changer for our operations. The system they built handles our scale effortlessly.”
+          - generic [ref=e503]:
+            - generic [ref=e505]: BS
+            - generic [ref=e506]:
+              - paragraph [ref=e507]: Budi Santoso
+              - paragraph [ref=e508]: CTO, LogiFlow
+    - generic [ref=e510]:
+      - generic [ref=e511]:
+        - generic [ref=e512]: Blog
+        - heading "Thoughts & insights" [level=2] [ref=e513]
+        - paragraph [ref=e514]: We write about engineering decisions, architecture patterns, and lessons learned from building real products.
+      - generic [ref=e515]:
+        - article [ref=e516]:
+          - generic [ref=e520]: Engineering
+          - generic [ref=e522]:
+            - generic [ref=e523]:
+              - generic [ref=e524]:
+                - img [ref=e525]
+                - text: Mar 15, 2025
+              - generic [ref=e527]:
+                - img [ref=e528]
+                - text: 5 min
+            - heading "Why We Chose Next.js for Enterprise Applications" [level=3] [ref=e531]
+            - paragraph [ref=e532]: A deep dive into our decision-making process and the technical advantages that make Next.js our go-to framework.
+            - generic [ref=e533]:
+              - text: Read Article
+              - img [ref=e534]
+        - article [ref=e537]:
+          - generic [ref=e541]: Architecture
+          - generic [ref=e543]:
+            - generic [ref=e544]:
+              - generic [ref=e545]:
+                - img [ref=e546]
+                - text: Feb 28, 2025
+              - generic [ref=e548]:
+                - img [ref=e549]
+                - text: 8 min
+            - heading "Building Real-Time Systems with WebSockets" [level=3] [ref=e552]
+            - paragraph [ref=e553]: Lessons learned from building production-grade real-time applications that serve thousands of concurrent users.
+            - generic [ref=e554]:
+              - text: Read Article
+              - img [ref=e555]
+        - article [ref=e558]:
+          - generic [ref=e562]: Strategy
+          - generic [ref=e564]:
+            - generic [ref=e565]:
+              - generic [ref=e566]:
+                - img [ref=e567]
+                - text: Jan 10, 2025
+              - generic [ref=e569]:
+                - img [ref=e570]
+                - text: 6 min
+            - heading "The Art of System Design for Startups" [level=3] [ref=e573]
+            - paragraph [ref=e574]: How to design systems that are simple enough to ship fast but robust enough to scale when you need them to.
+            - generic [ref=e575]:
+              - text: Read Article
+              - img [ref=e576]
+    - generic [ref=e583]:
+      - generic [ref=e584]:
+        - generic [ref=e585]: Contact
+        - heading "Let's start a conversation" [level=2] [ref=e586]
+        - paragraph [ref=e587]: Have a project in mind or just want to explore possibilities? We'd love to hear from you.
+      - generic [ref=e588]:
+        - generic [ref=e589]:
+          - generic [ref=e590]:
+            - link "Email hello@wardaya.dev" [ref=e591] [cursor=pointer]:
+              - /url: mailto:hello@wardaya.dev
+              - img [ref=e593]
+              - generic [ref=e596]:
+                - paragraph [ref=e597]: Email
+                - paragraph [ref=e598]: hello@wardaya.dev
+            - link "Phone +62 812 3456 7890" [ref=e599] [cursor=pointer]:
+              - /url: tel:+62 812 3456 7890
+              - img [ref=e601]
+              - generic [ref=e603]:
+                - paragraph [ref=e604]: Phone
+                - paragraph [ref=e605]: +62 812 3456 7890
+            - generic [ref=e606]:
+              - img [ref=e608]
+              - generic [ref=e611]:
+                - paragraph [ref=e612]: Location
+                - paragraph [ref=e613]: Jakarta, Indonesia
+          - generic [ref=e614]:
+            - paragraph [ref=e615]: Or reach us on
+            - generic [ref=e616]:
+              - link "GitHub" [ref=e617] [cursor=pointer]:
+                - /url: "#"
+              - link "LinkedIn" [ref=e618] [cursor=pointer]:
+                - /url: "#"
+              - link "Twitter" [ref=e619] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e621]:
+          - generic [ref=e622]:
+            - generic [ref=e623]:
+              - generic [ref=e624]: Name
+              - textbox "Your name" [ref=e625]
+            - generic [ref=e626]:
+              - generic [ref=e627]: Email
+              - textbox "you@company.com" [ref=e628]
+          - generic [ref=e629]:
+            - generic [ref=e630]: Subject
+            - textbox "Project inquiry" [ref=e631]
+          - generic [ref=e632]:
+            - generic [ref=e633]: Message
+            - textbox "Tell us about your project..." [ref=e634]
+          - button "Send Message" [ref=e635] [cursor=pointer]:
+            - text: Send Message
+            - img [ref=e636]
+  - contentinfo [ref=e639]:
+    - generic [ref=e640]:
+      - generic [ref=e641]:
+        - generic [ref=e642]:
+          - heading "Let's build something remarkable" [level=2] [ref=e643]
+          - paragraph [ref=e644]: Have a project in mind? We'd love to hear about it.
+        - link "Get in Touch" [ref=e645] [cursor=pointer]:
+          - /url: "#contact"
+          - text: Get in Touch
+          - img [ref=e646]
+      - generic [ref=e649]:
+        - generic [ref=e650]:
+          - generic [ref=e651]:
+            - generic [ref=e653]: W
+            - generic [ref=e654]: Wardaya
+          - paragraph [ref=e655]: Wardaya is a technology-driven company focused on building digital solutions that are scalable, efficient, and impactful.
+        - generic [ref=e656]:
+          - heading "Company" [level=4] [ref=e657]
+          - list [ref=e658]:
+            - listitem [ref=e659]:
+              - link "About" [ref=e660] [cursor=pointer]:
+                - /url: "#about"
+            - listitem [ref=e661]:
+              - link "Services" [ref=e662] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e663]:
+              - link "Work" [ref=e664] [cursor=pointer]:
+                - /url: "#work"
+            - listitem [ref=e665]:
+              - link "Team" [ref=e666] [cursor=pointer]:
+                - /url: "#team"
+        - generic [ref=e667]:
+          - heading "Resources" [level=4] [ref=e668]
+          - list [ref=e669]:
+            - listitem [ref=e670]:
+              - link "Blog" [ref=e671] [cursor=pointer]:
+                - /url: "#blog"
+            - listitem [ref=e672]:
+              - link "Contact" [ref=e673] [cursor=pointer]:
+                - /url: "#contact"
+            - listitem [ref=e674]:
+              - link "Careers" [ref=e675] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e676]:
+              - link "Privacy" [ref=e677] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e678]:
+          - heading "Connect" [level=4] [ref=e679]
+          - list [ref=e680]:
+            - listitem [ref=e681]:
+              - link "GitHub" [ref=e682] [cursor=pointer]:
+                - /url: https://github.com/wardaya
+                - img [ref=e683]
+                - text: GitHub
+            - listitem [ref=e687]:
+              - link "LinkedIn" [ref=e688] [cursor=pointer]:
+                - /url: https://linkedin.com/company/wardaya
+                - img [ref=e689]
+                - text: LinkedIn
+            - listitem [ref=e692]:
+              - link "Twitter" [ref=e693] [cursor=pointer]:
+                - /url: https://twitter.com/wardayadev
+                - img [ref=e694]
+                - text: Twitter
+            - listitem [ref=e697]:
+              - link "Instagram" [ref=e698] [cursor=pointer]:
+                - /url: https://instagram.com/wardayadev
+                - img [ref=e699]
+                - text: Instagram
+      - generic [ref=e705]:
+        - paragraph [ref=e706]: © 2026 Wardaya. All rights reserved.
+        - paragraph [ref=e707]: Crafted with precision in Jakarta, Indonesia
+  - button "Open Next.js Dev Tools" [ref=e713] [cursor=pointer]:
+    - img [ref=e714]
