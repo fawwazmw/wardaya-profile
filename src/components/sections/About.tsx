@@ -62,7 +62,7 @@ export function About() {
                     />
                   </div>
                   <p className="text-sm font-mono text-muted-foreground">
-                    Est. 2022
+                    Est. 2025
                   </p>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export function About() {
             <div className="flex items-center gap-4 pt-4">
               <div className="h-px flex-1 bg-border" />
               <span className="text-xs font-mono text-accent tracking-widest uppercase">
-                Since 2022
+                Since 2025
               </span>
               <div className="h-px flex-1 bg-border" />
             </div>

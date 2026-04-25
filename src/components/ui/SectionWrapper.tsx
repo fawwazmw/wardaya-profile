@@ -17,7 +17,7 @@ export function SectionWrapper({
   fullWidth = false,
 }: SectionWrapperProps) {
   return (
-    <section id={id} className={`relative py-24 md:py-32 ${className}`}>
+    <section id={id} className={`relative overflow-hidden py-24 md:py-32 ${className}`}>
       <div
         className={
           fullWidth ? "w-full" : "mx-auto max-w-7xl px-6 md:px-8 lg:px-12"

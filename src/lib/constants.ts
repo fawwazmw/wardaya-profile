@@ -56,7 +56,7 @@ export const projects = [
     description:
       "Full-stack subscription tracking and spending analytics platform with AI-powered chatbot, spending forecasts, billing comparison, and automated renewal reminders.",
     tags: ["React", "TypeScript", "Node.js", "PostgreSQL"],
-    year: "2025",
+    year: "2026",
     image: "/images/project-1.png",
     link: "https://wardayasubs.wardaya.my.id",
   },
@@ -75,18 +75,18 @@ export const projects = [
     description:
       "Real-time bus tracking system with live GPS monitoring, route optimization, and passenger information displays.",
     tags: ["Next.js", "WebSocket", "IoT", "Redis"],
-    year: "2024",
+    year: "2025",
     image: "/images/project-3.png",
   },
   {
-    title: "YuwarajaXVI",
-    category: "Education",
+    title: "UB Voice",
+    category: "Game",
     description:
-      "Official web platform for new students of Fakultas Vokasi Universitas Brawijaya. Handles online registration, orientation schedules, assignments, and user management for admins, students, and supervisors.",
-    tags: ["Laravel", "MySQL", "Tailwind CSS", "Vite"],
-    year: "2024",
-    image: "/images/project-4.jpg",
-    link: "https://yuwaraja.site",
+      "Universitas Brawijaya Virtual Campus on Roblox. An immersive virtual campus experience bringing the university environment into a game platform.",
+    tags: ["Roblox", "Lua", "Game Dev", "3D"],
+    year: "2025",
+    image: "/images/project-4.png",
+    link: "https://ubvoice.my.id",
   },
 ];
 
