@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SectionWrapper, SectionHeader } from "@/components/ui/SectionWrapper";
 import { projects } from "@/lib/constants";
 import { ArrowUpRight } from "lucide-react";
-import { ImageWithPlaceholder } from "@/components/ui/ImageWithPlaceholder";
+import Image from "next/image";
 
 const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
 
@@ -78,12 +78,11 @@ export function Portfolio() {
                     {/* Image / Visual */}
                     <div className="md:col-span-2 relative aspect-[16/10] md:aspect-auto bg-surface-elevated overflow-hidden">
                       {project.image ? (
-                        <ImageWithPlaceholder
+                        <Image
                           src={project.image}
                           alt={project.title}
                           fill
-                          containerClass="absolute inset-0"
-                          className="object-cover"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
                           sizes="(max-width: 768px) 100vw, 40vw"
                         />
                       ) : (
