@@ -5,7 +5,6 @@ import Image, { ImageProps } from "next/image";
 
 type Props = Omit<ImageProps, "onLoad"> & {
   containerClass?: string;
-  imgClass?: string;
 };
 
 export function ImageWithPlaceholder({
@@ -19,19 +18,19 @@ export function ImageWithPlaceholder({
     <div
       className={`relative overflow-hidden bg-surface-elevated ${containerClass}`}
     >
-      {/* Blurred placeholder background */}
+      {/* Placeholder overlay — fades out when image loads */}
       <div
         className={`absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent transition-opacity duration-500 ${
           loaded ? "opacity-0" : "opacity-100"
         }`}
       />
 
-      {/* Real image */}
+      {/* Real image — always visible, scales on load */}
       <Image
         alt={alt}
         {...imgProps}
-        className={`transition-all duration-500 ${
-          loaded ? "opacity-100 scale-100" : "opacity-0 scale-105"
+        className={`transition-all duration-700 ${
+          loaded ? "scale-100" : "scale-105"
         } ${imgProps.className || ""}`}
         onLoad={() => setLoaded(true)}
       />
