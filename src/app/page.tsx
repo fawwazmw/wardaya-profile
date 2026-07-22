@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -5,12 +6,27 @@ import { About } from "@/components/sections/About";
 import { Marquee } from "@/components/sections/Marquee";
 import { Services } from "@/components/sections/Services";
 import { Portfolio } from "@/components/sections/Portfolio";
-import { Team } from "@/components/sections/Team";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { Blog } from "@/components/sections/Blog";
-import { Contact } from "@/components/sections/Contact";
+import { getRssPosts } from "@/lib/feeds";
 
-export default function Home() {
+// Lazy load below-fold sections
+const Team = dynamic(() =>
+  import("@/components/sections/Team").then((m) => ({ default: m.Team }))
+);
+const Testimonials = dynamic(() =>
+  import("@/components/sections/Testimonials").then((m) => ({
+    default: m.Testimonials,
+  }))
+);
+const Blog = dynamic(() =>
+  import("@/components/sections/Blog").then((m) => ({ default: m.Blog }))
+);
+const Contact = dynamic(() =>
+  import("@/components/sections/Contact").then((m) => ({ default: m.Contact }))
+);
+
+export default async function Home() {
+  const rssPosts = await getRssPosts();
+
   return (
     <>
       <Navbar />
@@ -22,7 +38,7 @@ export default function Home() {
         <Portfolio />
         <Team />
         <Testimonials />
-        <Blog />
+        <Blog externalPosts={rssPosts} />
         <Contact />
       </main>
       <Footer />

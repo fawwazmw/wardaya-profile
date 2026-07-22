@@ -88,6 +88,16 @@ export const projects = [
     image: "/images/project-4.png",
     link: "https://ubvoice.my.id",
   },
+  {
+    title: "WardayaCode",
+    category: "Open Source",
+    description:
+      "An AI-powered coding agent that lives in your terminal. Multi-provider support for Claude, GPT-4, and Gemini with a permission system, session management, undo/checkpoint, and plugin extensibility. Privacy-first, open-source.",
+    tags: ["TypeScript", "Node.js", "React", "Ink", "CLI", "Open Source"],
+    year: "2026",
+    image: "/images/project-5.png",
+    link: "https://wardayacode.my.id",
+  },
 ];
 
 export const team = [
@@ -174,6 +184,7 @@ export const footerLinks = {
   ],
   resources: [
     { label: "Blog", href: "#blog" },
+    { label: "Uses", href: "/uses" },
     { label: "Contact", href: "#contact" },
     { label: "Careers", href: "#" },
     { label: "Privacy", href: "#" },

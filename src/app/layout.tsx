@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Syne, JetBrains_Mono } from "next/font/google";
+import { siteConfig, team } from "@/lib/constants";
+import { ThemeProvider } from "@/hooks/useTheme";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -67,7 +69,69 @@ export default function RootLayout({
       className={`${outfit.variable} ${syne.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body suppressHydrationWarning className="min-h-screen bg-background text-foreground font-sans">
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
+
+        {/* JSON-LD Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://wardaya.my.id/#organization",
+                  name: siteConfig.name,
+                  url: siteConfig.url,
+                  description: siteConfig.description,
+                  email: siteConfig.email,
+                  telephone: siteConfig.phone,
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Malang",
+                    addressCountry: "ID",
+                  },
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://wardaya.my.id/wardaya-logo.png",
+                  },
+                  founder: {
+                    "@type": "Person",
+                    name: team[0]?.name,
+                  },
+                  sameAs: [
+                    "https://github.com/fawwazmw",
+                    "https://www.linkedin.com/in/fawwaz-mufid-wardaya",
+                    "https://instagram.com/fwzmwrdy",
+                  ],
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://wardaya.my.id/#person",
+                  name: team[0]?.name,
+                  jobTitle: team[0]?.role,
+                  description: team[0]?.bio,
+                  image: team[0]?.avatar
+                    ? `https://wardaya.my.id${team[0].avatar}`
+                    : undefined,
+                  sameAs: [
+                    "https://github.com/fawwazmw",
+                    "https://www.linkedin.com/in/fawwaz-mufid-wardaya",
+                    "https://instagram.com/fwzmwrdy",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://wardaya.my.id/#website",
+                  url: siteConfig.url,
+                  name: siteConfig.name,
+                  description: siteConfig.description,
+                  publisher: { "@id": "https://wardaya.my.id/#organization" },
+                },
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );

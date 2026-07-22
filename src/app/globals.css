@@ -30,6 +30,21 @@
   --glow-opacity: 0.15;
 }
 
+[data-theme="light"] {
+  --background: #fafafa;
+  --foreground: #09090b;
+  --surface: #ffffff;
+  --surface-elevated: #f4f4f5;
+  --border-color: #e4e4e7;
+  --accent: #0284c7;
+  --accent-muted: #0369a1;
+  --muted: #a1a1aa;
+  --muted-fg: #71717a;
+
+  --grain-opacity: 0.015;
+  --glow-opacity: 0.08;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;

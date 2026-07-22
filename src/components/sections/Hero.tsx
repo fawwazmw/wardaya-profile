@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { siteConfig, stats } from "@/lib/constants";
+import { CountUp } from "@/components/ui/CountUp";
 
 export function Hero() {
   return (
@@ -110,7 +111,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 1.1 + i * 0.1 }}
             >
               <div className="text-3xl md:text-4xl font-display font-black text-accent">
-                {stat.value}
+                <CountUp value={stat.value} />
               </div>
               <div className="mt-1 text-sm text-muted-foreground font-mono">
                 {stat.label}

@@ -1,11 +1,132 @@
 "use client";
 
+import { useState, FormEvent, ChangeEvent } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper, SectionHeader } from "@/components/ui/SectionWrapper";
 import { siteConfig } from "@/lib/constants";
-import { Mail, MapPin, Phone, Send, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle, Loader2 } from "lucide-react";
+
+const WEB3FORMS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
+
+type FormFields = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
+type FormErrors = Partial<Record<keyof FormFields, string>>;
+
+type FormStatus = "idle" | "sending" | "success" | "error";
+
+const initialFields: FormFields = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
 
 export function Contact() {
+  const [fields, setFields] = useState<FormFields>(initialFields);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [serverMsg, setServerMsg] = useState("");
+
+  function validate(): FormErrors {
+    const errs: FormErrors = {};
+    if (!fields.name.trim()) errs.name = "Name is required";
+    if (!fields.email.trim()) {
+      errs.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) {
+      errs.email = "Invalid email format";
+    }
+    if (!fields.subject.trim()) errs.subject = "Subject is required";
+    if (!fields.message.trim()) {
+      errs.message = "Message is required";
+    } else if (fields.message.trim().length < 10) {
+      errs.message = "Message must be at least 10 characters";
+    }
+    return errs;
+  }
+
+  function handleChange(
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    const { name, value } = e.target;
+    setFields((prev) => ({ ...prev, [name]: value }));
+    // Clear error on change
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
+    if (status === "error" || status === "success") setStatus("idle");
+  }
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    const validation = validate();
+    if (Object.keys(validation).length > 0) {
+      setErrors(validation);
+      return;
+    }
+
+    if (!WEB3FORMS_KEY) {
+      setStatus("error");
+      setServerMsg(
+        "Form service not configured. Please try emailing me directly."
+      );
+      return;
+    }
+
+    setStatus("sending");
+    setServerMsg("");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: fields.name,
+          email: fields.email,
+          subject: fields.subject,
+          message: fields.message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("success");
+        setServerMsg("Message sent successfully! I'll get back to you soon.");
+        setFields(initialFields);
+      } else {
+        setStatus("error");
+        setServerMsg(
+          data.message || "Something went wrong. Please try emailing me directly."
+        );
+      }
+    } catch {
+      setStatus("error");
+      setServerMsg(
+        "Network error. Please try again or email me directly."
+      );
+    }
+  }
+
+  function handleReset() {
+    setStatus("idle");
+    setServerMsg("");
+    setErrors({});
+    setFields(initialFields);
+  }
+
+  const inputClass =
+    "w-full px-4 py-3 rounded-xl border bg-background text-foreground text-sm placeholder:text-muted focus:outline-none focus:ring-1 transition-all duration-300";
+  const inputNormal = `${inputClass} border-border focus:border-accent/50 focus:ring-accent/20`;
+  const inputError = `${inputClass} border-red-500/50 focus:border-red-500 focus:ring-red-500/20`;
+
   return (
     <SectionWrapper id="contact" className="relative bg-surface">
       <div className="absolute inset-0 grid-pattern opacity-30" />
@@ -108,60 +229,145 @@ export function Contact() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="md:col-span-3"
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} noValidate className="space-y-6">
+              {/* Success Message */}
+              {status === "success" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-3 p-4 rounded-xl border border-accent/20 bg-accent/5"
+                >
+                  <CheckCircle size={20} className="text-accent shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <p className="text-sm text-foreground font-medium">
+                      {serverMsg}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={handleReset}
+                      className="mt-2 text-xs text-accent hover:underline cursor-pointer"
+                    >
+                      Send another message
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Error Message */}
+              {status === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-3 p-4 rounded-xl border border-red-500/20 bg-red-500/5"
+                >
+                  <div className="w-2 h-2 rounded-full bg-red-500 shrink-0 mt-2" />
+                  <p className="text-sm text-red-400">{serverMsg}</p>
+                </motion.div>
+              )}
+
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest">
+                  <label
+                    htmlFor="contact-name"
+                    className="block text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest"
+                  >
                     Name
                   </label>
                   <input
+                    id="contact-name"
+                    name="name"
                     type="text"
                     placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm placeholder:text-muted focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300"
+                    value={fields.name}
+                    onChange={handleChange}
+                    className={errors.name ? inputError : inputNormal}
                   />
+                  {errors.name && (
+                    <p className="mt-1 text-xs text-red-400">{errors.name}</p>
+                  )}
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest">
+                  <label
+                    htmlFor="contact-email"
+                    className="block text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest"
+                  >
                     Email
                   </label>
                   <input
+                    id="contact-email"
+                    name="email"
                     type="email"
                     placeholder="you@company.com"
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm placeholder:text-muted focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300"
+                    value={fields.email}
+                    onChange={handleChange}
+                    className={errors.email ? inputError : inputNormal}
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-xs text-red-400">{errors.email}</p>
+                  )}
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest">
+                <label
+                  htmlFor="contact-subject"
+                  className="block text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest"
+                >
                   Subject
                 </label>
                 <input
+                  id="contact-subject"
+                  name="subject"
                   type="text"
                   placeholder="Project inquiry"
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm placeholder:text-muted focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300"
+                  value={fields.subject}
+                  onChange={handleChange}
+                  className={errors.subject ? inputError : inputNormal}
                 />
+                {errors.subject && (
+                  <p className="mt-1 text-xs text-red-400">{errors.subject}</p>
+                )}
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest">
+                <label
+                  htmlFor="contact-message"
+                  className="block text-xs font-mono text-muted-foreground mb-2 uppercase tracking-widest"
+                >
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
+                  name="message"
                   rows={5}
                   placeholder="Tell us about your project..."
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm placeholder:text-muted focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300 resize-none"
+                  value={fields.message}
+                  onChange={handleChange}
+                  className={`${errors.message ? inputError : inputNormal} resize-none`}
                 />
+                {errors.message && (
+                  <p className="mt-1 text-xs text-red-400">{errors.message}</p>
+                )}
               </div>
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-background font-medium rounded-full hover:bg-accent-muted transition-all duration-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.2)] cursor-pointer"
+                disabled={status === "sending"}
+                whileHover={status === "sending" ? {} : { scale: 1.01 }}
+                whileTap={status === "sending" ? {} : { scale: 0.99 }}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-background font-medium rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.2)] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
               >
-                Send Message
-                <Send size={16} />
+                {status === "sending" ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send size={16} />
+                  </>
+                )}
               </motion.button>
             </form>
           </motion.div>
