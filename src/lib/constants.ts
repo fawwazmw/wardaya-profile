@@ -138,36 +138,6 @@ export const testimonials = [
   },
 ];
 
-export const blogPosts = [
-  {
-    title: "Why We Chose Next.js for Enterprise Applications",
-    excerpt:
-      "A deep dive into our decision-making process and the technical advantages that make Next.js our go-to framework.",
-    date: "2025-03-15",
-    readTime: "5 min",
-    category: "Engineering",
-    slug: "why-nextjs-enterprise",
-  },
-  {
-    title: "Building Real-Time Systems with WebSockets",
-    excerpt:
-      "Lessons learned from building production-grade real-time applications that serve thousands of concurrent users.",
-    date: "2025-02-28",
-    readTime: "8 min",
-    category: "Architecture",
-    slug: "realtime-websockets",
-  },
-  {
-    title: "The Art of System Design for Startups",
-    excerpt:
-      "How to design systems that are simple enough to ship fast but robust enough to scale when you need them to.",
-    date: "2025-01-10",
-    readTime: "6 min",
-    category: "Strategy",
-    slug: "system-design-startups",
-  },
-];
-
 export const stats = [
   { value: "50+", label: "Projects Delivered" },
   { value: "30+", label: "Happy Clients" },

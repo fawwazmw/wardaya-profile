@@ -1,8 +1,39 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useSyncExternalStore,
+  ReactNode,
+} from "react";
 
 type Theme = "dark" | "light";
+
+const STORAGE_KEY = "theme";
+const listeners = new Set<() => void>();
+
+function subscribe(callback: () => void) {
+  listeners.add(callback);
+  return () => listeners.delete(callback);
+}
+
+function notify() {
+  listeners.forEach((cb) => cb());
+}
+
+function getSnapshot(): Theme {
+  return (document.documentElement.getAttribute("data-theme") as Theme) || "dark";
+}
+
+function getServerSnapshot(): Theme {
+  return "dark";
+}
+
+function applyTheme(next: Theme) {
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem(STORAGE_KEY, next);
+  notify();
+}
 
 const ThemeContext = createContext<{
   theme: Theme;
@@ -13,30 +44,10 @@ const ThemeContext = createContext<{
 });
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored) {
-      setTheme(stored);
-      document.documentElement.setAttribute("data-theme", stored);
-    } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  }, []);
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   function toggle() {
-    const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    localStorage.setItem("theme", next);
-    document.documentElement.setAttribute("data-theme", next);
-  }
-
-  // Prevent flash by rendering nothing until mounted
-  if (!mounted) {
-    return <>{children}</>;
+    applyTheme(theme === "dark" ? "light" : "dark");
   }
 
   return (

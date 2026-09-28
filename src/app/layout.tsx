@@ -23,6 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: "Wardaya — Building Digital Solutions That Matter",
   description:
     "Wardaya is a technology-driven company focused on building digital solutions that are scalable, efficient, and impactful. Web applications, systems, and digital products tailored to solve real-world problems.",
@@ -68,6 +69,13 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${syne.variable} ${jetbrainsMono.variable} antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body suppressHydrationWarning className="min-h-screen bg-background text-foreground font-sans">
         <ThemeProvider>{children}</ThemeProvider>
 

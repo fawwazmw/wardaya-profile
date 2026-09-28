@@ -13,7 +13,7 @@ Single-page marketing site showcasing Wardaya's services, projects, team, and bl
 - **Hero** — animated headline, CTA buttons, stats with count-up animation
 - **Services** — web apps, system architecture, digital products, technical consulting
 - **Portfolio** — project showcase with category filtering
-- **Blog** — own articles plus auto-fetched tech news from RSS feeds
+- **Blog** — auto-aggregated articles from open RSS/Atom sources, refreshed daily via ISR
 - **Contact** — functional form with Web3Forms integration
 - **Dark / Light mode** — toggle persisted to localStorage
 - **SEO** — JSON-LD structured data, Open Graph, Twitter cards

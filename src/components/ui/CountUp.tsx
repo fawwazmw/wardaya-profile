@@ -18,13 +18,13 @@ function parseStat(raw: string) {
 export function CountUp({ value, className = "" }: Props) {
   const { num, suffix } = parseStat(value);
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const hasAnimated = useRef(false);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   useEffect(() => {
-    if (!isInView || hasAnimated) return;
-    setHasAnimated(true);
+    if (!isInView || hasAnimated.current) return;
+    hasAnimated.current = true;
 
     const duration = 1500;
     const steps = 30;
@@ -40,7 +40,7 @@ export function CountUp({ value, className = "" }: Props) {
     }, duration / steps);
 
     return () => clearInterval(timer);
-  }, [isInView, hasAnimated, num]);
+  }, [isInView, num]);
 
   const display = Number.isInteger(count) ? Math.round(count) : count.toFixed(1);
 

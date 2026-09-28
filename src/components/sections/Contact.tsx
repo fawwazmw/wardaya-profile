@@ -167,7 +167,7 @@ export function Contact() {
               </a>
 
               <a
-                href={`tel:${siteConfig.phone}`}
+                href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
                 className="group flex items-start gap-4 p-4 rounded-xl border border-border bg-background hover:border-accent/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">

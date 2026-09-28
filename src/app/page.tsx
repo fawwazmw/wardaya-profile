@@ -24,6 +24,8 @@ const Contact = dynamic(() =>
   import("@/components/sections/Contact").then((m) => ({ default: m.Contact }))
 );
 
+export const revalidate = 86400;
+
 export default async function Home() {
   const rssPosts = await getRssPosts();
 

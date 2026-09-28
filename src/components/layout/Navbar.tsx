@@ -6,6 +6,7 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/constants";
 import { useTheme } from "@/hooks/useTheme";
 import Image from "next/image";
+import Link from "next/link";
 
 function useActiveSection() {
   const [active, setActive] = useState("");
@@ -60,7 +61,7 @@ export function Navbar() {
       >
         <nav className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="relative z-10 flex items-center gap-2 group">
+          <Link href="/" className="relative z-10 flex items-center gap-2 group">
             <Image
               src="/wardaya-logo.png"
               alt={siteConfig.name}
@@ -71,7 +72,7 @@ export function Navbar() {
             <span className="font-display font-bold text-lg tracking-tight">
               {siteConfig.name}
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
